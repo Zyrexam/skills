@@ -1,7 +1,7 @@
 # My Skills
 
 Learning how software-factory skills work by building my own.
-Each skill does one job and hands off to the next. Templates live beside each SKILL.md.
+Each skill does one job and hands off to the next.
 
 ## Chain
 
@@ -29,5 +29,3 @@ Supporting files: `references/` templates + `examples.md` where needed. Paths in
 @teach teach me JWT auth
 @grill-me grill me on REST APIs
 ```
-
-Derived from: Matt Pocock (grilling, teach workspace, to-spec/to-tickets), pstack (how/why, prove-it-works, vertical slices), Osmani (patterns, spec gates, clean code).
