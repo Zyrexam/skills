@@ -1,31 +1,33 @@
 # My Skills
 
 Learning how software-factory skills work by building my own.
+Each skill does one job and hands off to the next. Templates live beside each SKILL.md.
 
-## Skills
+## Chain
 
-- `grill-me/` — asks tough questions on a topic. If no topic given, picks one from current project.
-- `teach/` — teaches a concept simply (what / how / why) with one example, one recall question, and one HTML lesson in `./lessons/`.
+```text
+vague idea -> @clear-scope -> @build-spec -> @build-plan -> build
+stuck      -> @teach <-> @grill-me (learn <-> test loop)
+```
+
+| Skill | Job | Output |
+|---|---|---|
+| `clear-scope/` | vague (twitter clone) -> MVP scope + Not doing | `./scopes/<slug>.md` |
+| `build-spec/` | scope -> frozen spec, stops for approval | `./specs/<slug>.md` |
+| `build-plan/` | spec -> 5-7 drops with Blocked by | `./plans/<slug>.md` |
+| `teach/` | concept -> what/how/why + example + recall Q | chat + `./lessons/0001-<topic>.html` |
+| `grill-me/` | topic -> 5 questions easy->tough + score | chat + weakest areas |
+
+Supporting files: `references/` templates + `examples.md` where needed. Paths inside skills are relative to that skill's folder.
 
 ## How to use
 
-Mention by ID in agent:
-
 ```text
+@clear-scope I want to build a twitter clone
+@build-spec on twitter-clone
+@build-plan on twitter-clone
+@teach teach me JWT auth
 @grill-me grill me on REST APIs
-@teach teach me closures
 ```
 
-## How a skill works
-
-Each skill is a folder with a `SKILL.md`:
-
-```text
-skills/
-  grill-me/SKILL.md
-  teach/SKILL.md
-```
-
-`SKILL.md` has frontmatter (`name`, `description`) + short steps. `description` decides when agent loads it. ID comes from folder name.
-
-Derived from: Matt Pocock skills, pstack teach/how/why, Addy Osmani patterns.
+Derived from: Matt Pocock (grilling, teach workspace, to-spec/to-tickets), pstack (how/why, prove-it-works, vertical slices), Osmani (patterns, spec gates, clean code).
